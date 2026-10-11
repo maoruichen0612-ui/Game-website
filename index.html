@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Pixel Playground is a no-login arcade for quick classic games.">
+  <title>Pixel Playground | Instant Classic Games</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Pixel Playground home">
+      <span class="brand-mark" aria-hidden="true">PP</span>
+      <span>
+        <strong>Pixel Playground</strong>
+        <small>classic games, instantly</small>
+      </span>
+    </a>
+    <div class="topbar-note"><span class="live-dot" aria-hidden="true"></span> No login. No download.</div>
+  </header>
+
+  <main id="top" class="app-shell">
+    <aside class="game-menu" aria-label="Game menu">
+      <div class="menu-heading">
+        <span class="eyebrow">Arcade menu</span>
+        <h2>Pick a game</h2>
+      </div>
+      <nav id="gameMenu" class="game-list">
+        <button class="game-card active" type="button" data-game="snake" aria-pressed="true">
+          <span class="game-thumb thumb-snake" aria-hidden="true"><i></i><b></b></span>
+          <span class="game-card-copy"><strong>Snake</strong><small>Grow, turn, survive</small></span>
+          <span class="game-key">01</span>
+        </button>
+        <button class="game-card" type="button" data-game="2048" aria-pressed="false">
+          <span class="game-thumb thumb-2048" aria-hidden="true"><b>2</b><b>0</b><b>4</b><b>8</b></span>
+          <span class="game-card-copy"><strong>2048</strong><small>Stack the numbers</small></span>
+          <span class="game-key">02</span>
+        </button>
+        <button class="game-card" type="button" data-game="tetris" aria-pressed="false">
+          <span class="game-thumb thumb-tetris" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          <span class="game-card-copy"><strong>Tetris</strong><small>Clear the lines</small></span>
+          <span class="game-key">03</span>
+        </button>
+        <button class="game-card" type="button" data-game="minesweeper" aria-pressed="false">
+          <span class="game-thumb thumb-mines" aria-hidden="true"><b>!</b><i></i></span>
+          <span class="game-card-copy"><strong>Minesweeper</strong><small>Think before you click</small></span>
+          <span class="game-key">04</span>
+        </button>
+        <button class="game-card locked" type="button" data-game="pong" aria-pressed="false" aria-disabled="true" disabled>
+          <span class="game-thumb thumb-pong" aria-hidden="true"><i></i><b></b></span>
+          <span class="game-card-copy"><strong>Pong <em class="lock-label">Locked</em></strong><small>Classic two-paddle rally</small></span>
+          <span class="game-key">05</span>
+        </button>
+        <button class="game-card locked" type="button" data-game="brickBreaker" aria-pressed="false" aria-disabled="true" disabled><span class="game-thumb thumb-brick" aria-hidden="true"><i></i><b></b></span><span class="game-card-copy"><strong>Brick Breaker <em class="lock-label">Locked</em></strong><small>Break the wall</small></span><span class="game-key">06</span></button>
+        <button class="game-card locked" type="button" data-game="flappyDot" aria-pressed="false" aria-disabled="true" disabled><span class="game-thumb thumb-flappy" aria-hidden="true"><i></i><b></b></span><span class="game-card-copy"><strong>Flappy Dot <em class="lock-label">Locked</em></strong><small>Thread the gaps</small></span><span class="game-key">07</span></button>
+        <button class="game-card locked" type="button" data-game="connectFour" aria-pressed="false" aria-disabled="true" disabled><span class="game-thumb thumb-connect" aria-hidden="true"><i></i><b></b></span><span class="game-card-copy"><strong>Connect Four <em class="lock-label">Locked</em></strong><small>Line up four</small></span><span class="game-key">08</span></button>
+        <button class="game-card locked" type="button" data-game="matchPairs" aria-pressed="false" aria-disabled="true" disabled><span class="game-thumb thumb-match" aria-hidden="true"><i></i><b></b></span><span class="game-card-copy"><strong>Match Pairs <em class="lock-label">Locked</em></strong><small>Find the twins</small></span><span class="game-key">09</span></button>
+        <button class="game-card locked" type="button" data-game="whackBlock" aria-pressed="false" aria-disabled="true" disabled><span class="game-thumb thumb-whack" aria-hidden="true"><i></i><b></b></span><span class="game-card-copy"><strong>Whack-a-Block <em class="lock-label">Locked</em></strong><small>Tap it fast</small></span><span class="game-key">10</span></button>
+        <button class="game-card locked" type="button" data-game="lightsOut" aria-pressed="false" aria-disabled="true" disabled><span class="game-thumb thumb-lights" aria-hidden="true"><i></i><b></b></span><span class="game-card-copy"><strong>Lights Out <em class="lock-label">Locked</em></strong><small>Clear the grid</small></span><span class="game-key">11</span></button>
+        <button class="game-card locked" type="button" data-game="memoryFlip" aria-pressed="false" aria-disabled="true" disabled><span class="game-thumb thumb-memory" aria-hidden="true"><i></i><b></b></span><span class="game-card-copy"><strong>Memory Flip <em class="lock-label">Locked</em></strong><small>Remember the cards</small></span><span class="game-key">12</span></button>
+        <button class="game-card locked" type="button" data-game="bubblePop" aria-pressed="false" aria-disabled="true" disabled><span class="game-thumb thumb-bubble" aria-hidden="true"><i></i><b></b></span><span class="game-card-copy"><strong>Bubble Pop <em class="lock-label">Locked</em></strong><small>Pop the targets</small></span><span class="game-key">13</span></button>
+        <button class="game-card locked" type="button" data-game="solitaireMini" aria-pressed="false" aria-disabled="true" disabled><span class="game-thumb thumb-solitaire" aria-hidden="true"><i></i><b></b></span><span class="game-card-copy"><strong>Solitaire Mini <em class="lock-label">Locked</em></strong><small>Deal a quick hand</small></span><span class="game-key">14</span></button>
+        <button class="game-card locked" type="button" data-game="roadDash" aria-pressed="false" aria-disabled="true" disabled><span class="game-thumb thumb-road" aria-hidden="true"><i></i><b></b></span><span class="game-card-copy"><strong>Road Dash <em class="lock-label">Locked</em></strong><small>Dodge the traffic</small></span><span class="game-key">15</span></button>
+      </nav>
+      <div class="menu-footer">
+        <span class="pixel-star" aria-hidden="true">+</span>
+        <span>Fifteen quick games.<br>One tiny arcade.</span>
+      </div>
+      <button id="shopButton" class="shop-launch" type="button"><span class="shop-launch-icon" aria-hidden="true">$</span><span><strong>Arcade shop</strong><small>Upgrades &amp; unlocks</small></span><b aria-hidden="true">&gt;</b></button>
+    </aside>
+
+    <section class="stage" aria-live="polite">
+      <div class="stage-heading">
+        <div>
+          <span class="eyebrow">Now playing / <span id="gameNumber">01</span></span>
+          <h1 id="gameTitle">Snake</h1>
+          <p id="gameDescription">Eat the dots, grow your tail, and keep the run alive.</p>
+        </div>
+        <button id="restartButton" class="primary-button" type="button"><span aria-hidden="true">+</span> New game</button>
+      </div>
+
+      <div class="score-strip" aria-label="Game stats">
+        <div class="stat"><span>Score</span><strong id="scoreValue">0</strong></div>
+        <div class="stat"><span>Best</span><strong id="bestValue">0</strong></div>
+        <div class="stat"><span>Level</span><strong id="levelValue">1</strong></div>
+        <div class="stat stat-status"><span>Status</span><strong id="statusValue">Ready</strong></div>
+      </div>
+
+      <div class="play-frame">
+        <section id="panel-snake" class="game-panel active" data-panel="snake" aria-label="Snake game">
+          <div class="canvas-wrap">
+            <canvas id="snakeCanvas" width="420" height="420" tabindex="0" aria-label="Snake game board"></canvas>
+            <div id="snakeOverlay" class="game-overlay">
+              <span class="overlay-kicker">01 / classic</span>
+              <strong>Ready when you are</strong>
+              <span>Use arrow keys or WASD to start.</span>
+              <button class="overlay-button" type="button" data-start="snake">Start Snake</button>
+            </div>
+          </div>
+          <p class="control-line"><kbd>W A S D</kbd> or <kbd>arrow keys</kbd> to move <span>•</span> <kbd>Enter</kbd> to restart</p>
+        </section>
+
+        <section id="panel-2048" class="game-panel" data-panel="2048" aria-label="2048 game">
+          <div class="game-2048-shell">
+            <div id="game2048Grid" class="grid-2048" role="grid" aria-label="2048 board"></div>
+            <div id="game2048Overlay" class="game-overlay compact-overlay hidden">
+              <span class="overlay-kicker">2048</span>
+              <strong id="game2048Message">Game over</strong>
+              <span>Make a new move to try again.</span>
+              <button class="overlay-button" type="button" data-start="2048">Play again</button>
+            </div>
+          </div>
+          <p class="control-line"><kbd>W A S D</kbd> or <kbd>arrow keys</kbd> to slide tiles <span>•</span> combine matching numbers</p>
+        </section>
+
+        <section id="panel-tetris" class="game-panel" data-panel="tetris" aria-label="Tetris game">
+          <div class="tetris-layout">
+            <div class="canvas-wrap tetris-wrap">
+              <canvas id="tetrisCanvas" width="240" height="480" tabindex="0" aria-label="Tetris game board"></canvas>
+              <div id="tetrisOverlay" class="game-overlay">
+                <span class="overlay-kicker">03 / classic</span>
+                <strong>Drop in</strong>
+                <span>Use the keys below to begin.</span>
+                <button class="overlay-button" type="button" data-start="tetris">Start Tetris</button>
+              </div>
+            </div>
+            <div class="next-piece-box">
+              <span class="eyebrow">Next piece</span>
+              <canvas id="nextCanvas" width="120" height="120" aria-label="Next Tetris piece"></canvas>
+              <p>Clear rows to level up. Space drops instantly.</p>
+            </div>
+          </div>
+          <p class="control-line"><kbd>← →</kbd> move <span>•</span> <kbd>↑</kbd> rotate <span>•</span> <kbd>↓</kbd> soft drop <span>•</span> <kbd>Space</kbd> hard drop</p>
+        </section>
+
+        <section id="panel-minesweeper" class="game-panel" data-panel="minesweeper" aria-label="Minesweeper game">
+          <div class="minesweeper-shell">
+            <div class="mine-toolbar"><span><b id="mineCount">15</b> mines</span><span>Right-click to flag</span></div>
+            <div id="minesweeperGrid" class="minesweeper-grid" role="grid" aria-label="Minesweeper board"></div>
+            <div id="mineMessage" class="mine-message">Find every safe square.</div>
+          </div>
+          <p class="control-line"><kbd>Click</kbd> reveal <span>•</span> <kbd>Right-click</kbd> flag a mine</p>
+        </section>
+
+        <section id="panel-pong" class="game-panel" data-panel="pong" aria-label="Pong game">
+          <div class="canvas-wrap pong-wrap">
+            <canvas id="pongCanvas" width="480" height="300" tabindex="0" aria-label="Pong game board"></canvas>
+            <div id="pongOverlay" class="game-overlay">
+              <span class="overlay-kicker">05 / unlocked</span>
+              <strong>Ready to rally</strong>
+              <span>Keep the ball away from your edge.</span>
+              <button class="overlay-button" type="button" data-start="pong">Start Pong</button>
+            </div>
+          </div>
+          <p class="control-line"><kbd>↑ ↓</kbd> move your paddle <span>•</span> <kbd>W S</kbd> also work</p>
+        </section>
+
+        <section id="panel-bonus" class="game-panel" data-panel="bonus" aria-label="Bonus game">
+          <div id="bonusGameHost" class="bonus-game-host"></div>
+        </section>
+
+        <section id="panel-shop" class="game-panel shop-panel" data-panel="shop" aria-label="Arcade shop">
+          <div class="shop-page-heading"><div><span class="eyebrow">Spend your score</span><h2>Arcade shop</h2><p>Turn points from any game into upgrades and new places to play.</p></div><div class="wallet large-wallet"><span aria-hidden="true">$</span><strong id="pointsValue">0</strong><small>pts</small></div></div>
+          <div class="shop-page-section"><div class="shop-section-heading"><h3>Upgrades</h3><span>15 items</span></div><div id="shopUpgrades" class="shop-grid"></div></div>
+          <div class="shop-page-section"><div class="shop-section-heading"><h3>Unlock games</h3><span>10 games</span></div><div id="shopGames" class="shop-grid"></div></div>
+          <p id="shopMessage" class="shop-message shop-page-message">Score points in any game to shop.</p>
+        </section>
+      </div>
+
+      <footer class="stage-footer">
+        <span><i class="footer-dot coral"></i> Built for quick breaks</span>
+        <span><i class="footer-dot lime"></i> High scores stay on this device</span>
+      </footer>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
