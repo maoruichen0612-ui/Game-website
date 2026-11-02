@@ -34,17 +34,17 @@ const shopItems = [
   { id: "colorPack", type: "upgrade", title: "Arcade color pack", description: "A fresh accent palette", cost: 260, icon: "C" }
 ];
 const unlockableGames = [
-  { id: "pong", title: "Pong", description: "Classic two-paddle rally", cost: 250, icon: ">" },
-  { id: "brickBreaker", title: "Brick Breaker", description: "Break the wall", cost: 300, icon: "B" },
-  { id: "flappyDot", title: "Flappy Dot", description: "Thread the gaps", cost: 320, icon: "F" },
-  { id: "connectFour", title: "Connect Four", description: "Line up four", cost: 350, icon: "4" },
-  { id: "matchPairs", title: "Match Pairs", description: "Find the twins", cost: 380, icon: "M" },
-  { id: "whackBlock", title: "Whack-a-Block", description: "Tap it fast", cost: 410, icon: "W" },
-  { id: "lightsOut", title: "Lights Out", description: "Clear the grid", cost: 440, icon: "L" },
-  { id: "memoryFlip", title: "Memory Flip", description: "Remember the cards", cost: 470, icon: "F" },
-  { id: "bubblePop", title: "Bubble Pop", description: "Pop the targets", cost: 500, icon: "P" },
-  { id: "solitaireMini", title: "Solitaire Mini", description: "Deal a quick hand", cost: 550, icon: "S" },
-  { id: "roadDash", title: "Road Dash", description: "Dodge the traffic", cost: 600, icon: "R" }
+  { id: "pong", type: "game", title: "Pong", description: "Classic two-paddle rally", cost: 250, icon: ">" },
+  { id: "brickBreaker", type: "game", title: "Brick Breaker", description: "Break the wall", cost: 300, icon: "B" },
+  { id: "flappyDot", type: "game", title: "Flappy Dot", description: "Thread the gaps", cost: 320, icon: "F" },
+  { id: "connectFour", type: "game", title: "Connect Four", description: "Line up four", cost: 350, icon: "4" },
+  { id: "matchPairs", type: "game", title: "Match Pairs", description: "Find the twins", cost: 380, icon: "M" },
+  { id: "whackBlock", type: "game", title: "Whack-a-Block", description: "Tap it fast", cost: 410, icon: "W" },
+  { id: "lightsOut", type: "game", title: "Lights Out", description: "Clear the grid", cost: 440, icon: "L" },
+  { id: "memoryFlip", type: "game", title: "Memory Flip", description: "Remember the cards", cost: 470, icon: "F" },
+  { id: "bubblePop", type: "game", title: "Bubble Pop", description: "Pop the targets", cost: 500, icon: "P" },
+  { id: "solitaireMini", type: "game", title: "Solitaire Mini", description: "Deal a quick hand", cost: 550, icon: "S" },
+  { id: "roadDash", type: "game", title: "Road Dash", description: "Dodge the traffic", cost: 600, icon: "R" }
 ];
 
 let activeGame = "snake";
@@ -130,11 +130,11 @@ function syncLockedGames() {
 function buyShopItem(item) {
   const entry = shopItems.find(candidate => candidate.id === item) || unlockableGames.find(candidate => candidate.id === item);
   if (!entry) return;
-  if (entry.type !== "upgrade" && isGameUnlocked(item)) { switchGame(item); return; }
+  if (entry.type === "game" && isGameUnlocked(item)) { switchGame(item); return; }
   if (walletPoints < entry.cost) { setShopMessage(`You need ${entry.cost - walletPoints} more points.`, "error"); return; }
   walletPoints -= entry.cost; saveBest("wallet", walletPoints);
   if (entry.type === "upgrade") { upgradeCounts[item] += 1; saveBest(`upgrade-${item}`, upgradeCounts[item]); if (item === "snakeLife") { snakeLives += 1; saveBest("snake-lives", snakeLives); } setShopMessage(`${entry.title} added to your upgrades.`, "success"); }
-  else { saveBest(`unlock-${item}`, 1); syncLockedGames(); setShopMessage(`${entry.title} unlocked.`, "success"); }
+  else { saveBest(`unlock-${item}`, 1); syncLockedGames(); setShopMessage(`${entry.title} unlocked.`, "success"); switchGame(item); }
   updateShop();
 }
 
