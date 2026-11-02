@@ -3,7 +3,7 @@ const gameInfo = {
   "2048": { number: "02", title: "2048", description: "Slide matching tiles together until you reach the iconic 2048." },
   tetris: { number: "03", title: "Tetris", description: "Fit the falling pieces, clear rows, and chase a clean board." },
   minesweeper: { number: "04", title: "Minesweeper", description: "Read the numbers, mark the danger, and reveal every safe square." },
-  pong: { number: "05", title: "Pong", description: "Keep your paddle sharp and send the ball back across the line.", bonus: true },
+  pong: { number: "05", title: "Pong", description: "Keep your paddle sharp and send the ball back across the line." },
   brickBreaker: { number: "06", title: "Brick Breaker", description: "Break the wall one bounce at a time.", bonus: true },
   flappyDot: { number: "07", title: "Flappy Dot", description: "Thread the gaps and keep your dot flying.", bonus: true },
   connectFour: { number: "08", title: "Connect Four", description: "Line up four and claim the board.", bonus: true },
